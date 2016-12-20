@@ -236,7 +236,7 @@ function create_config( )
     moderation = {data = 'data/moderation.json'},
     about_text = [[<b>iManager</b> - <i>Cli</i>
 		
-A new <b>AntiSpam-Bot</b> Based on <code>TeleSeed</code>
+A new <b>AntiSpam-Bot</b> Based on <code>BlackPlus</code>
 github.com/MobinDehghani/iManager
 		
 @MobinDev <i>[Developer]</i>
