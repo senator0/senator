@@ -1,14 +1,4 @@
---[[
 
-     **************************
-     *  BlackPlus Plugins...  *
-     *                        *
-     *     By @MehdiHS        *
-     *                        *
-     *  Channel > @Black_Ch   *
-     **************************
-	 
-]]
 antiarabic = {}-- An empty table for solving multiple kicking problem
 
 do
@@ -59,14 +49,3 @@ return {
 }
 
 end
---[[
-
-     **************************
-     *  BlackPlus Plugins...  *
-     *                        *
-     *     By @MehdiHS        *
-     *                        *
-     *  Channel > @Black_Ch   *
-     **************************
-	 
-]]
