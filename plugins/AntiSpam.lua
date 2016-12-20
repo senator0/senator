@@ -1,14 +1,4 @@
---[[
 
-     **************************
-     *  BlackPlus Plugins...  *
-     *                        *
-     *     By @MehdiHS        *
-     *                        *
-     *  Channel > @Black_Ch   *
-     **************************
-	 
-]]
 --An empty table for solving multiple kicking problem(thanks to @topkecleon )
 kicktable = {}
 
@@ -178,14 +168,3 @@ return {
 }
 
 end
---[[
-
-     **************************
-     *  BlackPlus Plugins...  *
-     *                        *
-     *     By @MehdiHS        *
-     *                        *
-     *  Channel > @Black_Ch   *
-     **************************
-	 
-]]
