@@ -140,7 +140,7 @@ local function is_plugin_disabled_on_chat(plugin_name, receiver)
     -- Checks if plugin is disabled on this chat
     for disabled_plugin,disabled in pairs(disabled_chats[receiver]) do
       if disabled_plugin == plugin_name and disabled then
-        local warning = 'Plugin '..disabled_plugin..' is disabled on this chat'
+        local warning = ''
         print(warning)
         send_msg(receiver, warning, ok_cb, false)
         return true
@@ -195,14 +195,14 @@ function load_config( )
   local f = io.open('./data/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
-    print ("Created new config file: data/config.lua")
+    print ("launched By @MobinDev")
     create_config()
   else
     f:close()
   end
   local config = loadfile ("./data/config.lua")()
   for v,user in pairs(config.sudo_users) do
-    print("Sudo user: " .. user)
+    print("Sudo : " .. user)
   end
   return config
 end
@@ -212,58 +212,22 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "Plugins",
-    "AboutMe",
     "InSuper",
     "InSudo",
-    "ToSupport",
-    "Welcome",
-    "SetWelcome",
-    "Inv",
-    "Weather",
     "PmLoad",
-    "ServerMgr",
-    "Start",
-    "My_Msgs",
-    "TopStats",
     "Whitelist",
-    "ToPhoto",
-    "ToSticker",
-    "OnService",
-    "Porn",
-    "Test",
-    "Time",
-    "Fantasy_Writer",
-    "Logo",
-    "MyNumber",
-    "PKGinastaller",
-    "BlackPlus",
-    "ToVoice",
     "AntiArabic",
-    "Del_Pro",
     "InAdmin",
-    "QrCode",
-    "Filter",
-    "Plist",
     "AntiLeave",
     "AntiSpam",
-    "Aparat",
     "BanHammer",
-    "Calculator",
-    "FeedBack",
     "InPm",
     "InRealm",
-    "SpeedTest",
-    "StickerMaker",
-    "Instagram",
-    "Cpu",
-    "ToPhoto_Txt_img",
-    "Gps",
-    "ToSticker(Text_to_stick)",
     "Block",
     "InGroups",
+    "Tools",
     },
-    sudo_users = {56693692,},--Sudo users
+    sudo_users = {56693692,}, --Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[
 ]],
@@ -304,7 +268,7 @@ end
 -- Enable plugins in config.json
 function load_plugins()
   for k, v in pairs(_config.enabled_plugins) do
-    print("Loading plugin", v)
+    print("loaded", v)
 
     local ok, err =  pcall(function()
       local t = loadfile("plugins/"..v..'.lua')()
