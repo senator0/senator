@@ -68,8 +68,10 @@ end
   return {
     patterns = {
       "^[#!/](me)$",
-      "^[!#/](info)$",
+      "^(me)$",
     },
     run = run
   }
 end
+
+-- By @MobinDev
