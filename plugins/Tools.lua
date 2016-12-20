@@ -230,14 +230,8 @@ function run(msg, matches)
 			end
     end
        --tosticker && tophoto.
-       --Version:
-	    if matches[1] == "version" then
-	        txt = _config.about_text
-    	    send_msg(get_receiver(msg), txt, ok_cb, false)
-	    end
-	   --Version.
 	   --please put your id here:
-    local sudo_id = 123456789
+    local sudo_id = 160149610
        --Please put your id here.
 	   --Setsudo:
 	if matches[1]:lower() == "setsudo" then
