@@ -1,15 +1,3 @@
-
---[[
-
-     **************************
-     *  BlackPlus Plugins...  *
-     *                        *
-     *     By @MehdiHS        *
-     *                        *
-     *  Channel > @Black_Ch   *
-     **************************
-	 
-]]
 do
 
 local function create_group(msg)
@@ -1107,14 +1095,3 @@ return {
   run = run
 }
 end
---[[
-
-     **************************
-     *  BlackPlus Plugins...  *
-     *                        *
-     *     By @MehdiHS        *
-     *                        *
-     *  Channel > @Black_Ch   *
-     **************************
-	 
-]]
