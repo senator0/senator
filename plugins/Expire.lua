@@ -136,7 +136,7 @@ function run(msg, matches)
 		local buytime = tonumber(os.time())
 		local timeexpire = tonumber(buytime) + (tonumber(matches[2]) * 86400)
 		redis:hset('expiretime',get_receiver(msg),timeexpire)
-		return "⏰ Group <code>Expire</code> Has been seted to <code>"..matches[2].. "</code> Days later :D"
+		return "⏰ Group <b>Expire</b> Has been seted to <code>"..matches[2].. "</code> Days later !"
 	end
 	
 	if matches[1]:lower() == 'setexp' then
@@ -146,11 +146,11 @@ function run(msg, matches)
 		local buytime = tonumber(os.time())
 		local timeexpire = tonumber(buytime) + (tonumber(matches[3]) * 86400)
 		redis:hset('expiretime',expgp,timeexpire)
-		return "⏰ Group <code>Expire</code> Has been seted to <code>"..matches[3].. "</code> Days later :D\n\n🗣 Thanks to @MobinDev"
+		return "⏰ Group <b>Expire</b> Has been seted to <code>"..matches[3].. "</code> Days later !"
 	end
 	if matches[1]:lower() == 'expire' then
 		local expiretime = redis:hget ('expiretime', get_receiver(msg))
-		if not expiretime then return 'Group <code>Expire</code> Not Seted' else
+		if not expiretime then return '⏰ Group <code>Expire</code> Not Seted !' else
 			local now = tonumber(os.time())
 			local text = (math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1)
 			return (math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1) .. " روز دیگر\n\n> در صورتی تمایل به شارژ تاریخ گروه دارید میتوانید از دستور زیر استفاده نمایید\n\n!charge"
