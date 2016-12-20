@@ -94,7 +94,7 @@ local receiver = cb_extra.receiver
  local msg = cb_extra.msg
   local deleted = 0 
 if success == 0 then
-send_large_msg(receiver, "First set me as admin!") 
+send_large_msg(receiver, "First set me as <b>Admin</b>!") 
 end
 for k,v in pairs(result) do
   if not v.first_name and not v.last_name then
@@ -102,13 +102,13 @@ deleted = deleted + 1
  kick_user(v.peer_id,msg.to.id)
  end
  end
- send_large_msg(receiver, deleted.." Deleted account removed from group!") 
+ send_large_msg(receiver, deleted.." <b>Deleted Account</b> Removed from Group!") 
  end 
 
 local function addword(msg, name)
     local hash = 'chat:'..msg.to.id..':badword'
     redis:hset(hash, name, 'newword')
-    return "New word has been added to list \n>"..name
+    return "New <b>Word</b> Added To list :\n\n> "..name
 end
 
 local function get_variables_hash(msg)
@@ -122,7 +122,7 @@ local function list_variablesbad(msg)
 
   if hash then
     local names = redis:hkeys(hash)
-    local text = 'List of words :\n\n'
+    local text = 'list of <b>Filter Words</b> :\n\n'
     for i=1, #names do
       text = text..'> '..names[i]..'\n'
     end
@@ -136,7 +136,7 @@ function clear_commandbad(msg, var_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:del(hash, var_name)
-  return 'Cleaned!'
+  return '<b>Filter list</b> Cleaned!'
 end
 
 local function get_valuebad(msg, var_name)
@@ -154,7 +154,7 @@ function clear_commandsbad(msg, cmd_name)
   --Save on redis  
   local hash = get_variables_hash(msg)
   redis:hdel(hash, cmd_name)
-  return ''..cmd_name..'  cleaned!'
+  return '<code>'..cmd_name..'</code> Deleted From list!'
 end
 
 local function history(extra, suc, result)
@@ -162,9 +162,9 @@ local function history(extra, suc, result)
     delete_msg(result[i].id, ok_cb, false)
   end
   if tonumber(extra.con) == #result then
-    send_msg(extra.chatid, '"'..#result..'" message has been removed!', ok_cb, false)
+    send_msg(extra.chatid, '<code>'..#result..'</code> <b>Massages</b> Was Deleted!', ok_cb, false)
   else
-    send_msg(extra.chatid, 'Removing has been finished.', ok_cb, false)
+    send_msg(extra.chatid, 'Selected <b>Massage</b> Numbers Has been Deleted!', ok_cb, false)
   end
 end
 
@@ -251,12 +251,12 @@ function run(msg, matches)
                 receiver = get_receiver(msg) 
                 channel_get_users(receiver, check_member_super_deleted,{receiver = receiver, msg = msg})
 		      else
-			      return "Just for owner or sudo!"
+                             return "<b>Das Nazan</b> Bache!"
           end
 		    end
 		    if matches[2] == "filterlist" then
 		      if not is_momod(msg) then
-            return 'only for moderators!'
+                return "<b>Das Nazan</b> Bache!"
           end
           asd = '1'
           return clear_commandbad(msg, asd)
@@ -266,7 +266,7 @@ function run(msg, matches)
 	   --Filter:
 	if matches[1] == 'filter' then
     if not is_momod(msg) then
-      return 'only for moderators!'
+    return "<b>Das Nazan</b> Bache!"
     end
     name = string.sub(matches[2], 1, 50)
     return addword(msg, name)
@@ -276,7 +276,7 @@ function run(msg, matches)
   end
   if matches[1] == 'unfilter' then
     if not is_momod(msg) then
-      return 'only for moderators!'
+    return "<b>Das Nazan</b> Bache!"
     end
     return clear_commandsbad(msg, matches[2])
     end
@@ -295,12 +295,12 @@ function run(msg, matches)
 	   --Rmsg:
 	    if matches[1] == 'rmsg' and is_owner(msg) then
             if msg.to.type == 'channel' then
-                if tonumber(matches[2]) > 10000 or tonumber(matches[2]) < 1 then
-                    return "More than 1 and less than 10,000"
+                if tonumber(matches[2]) > 250 or tonumber(matches[2]) < 1 then
+        return "Error of Delete <b>Massage</b>\nSelect <code>1-250</code> <b>Massages</b> Number for Delete!"
                 end
                 get_history(msg.to.peer_id, matches[2] + 1 , history , {chatid = msg.to.peer_id, con = matches[2]})
             else
-                return "Only for supergroup!"
+            return "Only Can Use in <b>SuperGroups</b>!"
             end
         elseif matches[1] == 'rmsg' and not is_owner(msg) then
             return "For moderators only!"
@@ -338,7 +338,6 @@ return {
  "^[!/#]([Ff]ilterlist)$",
  "^[!/#]([Ss]etsudo) (%d+)$",
  "^[!/#]([Rr]msg) (%d*)$",
- "^[!/#]([Cc]onfig) (%d+)$",
  "^[!/#]([Cc]lean) (.*)$",
  "^[!/#]([Bb]old) (.*)$",
  "^[!/#]([Ii]talic) (.*)$",
