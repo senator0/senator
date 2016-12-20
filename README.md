@@ -20,6 +20,6 @@ cd $HOME && cd iManager && chmod 777 mobin.sh && screen ./mobin.sh
 sudo service redis-server start && redis-cli
 `````
 #
-* **Thanks To [@MehdiHS](https://telegram.me/MehdiHS) - BlackTeam**
+* **Thanks To [@MehdiHS](https://telegram.me/MehdiHS) - BlackPlus**
 
 
