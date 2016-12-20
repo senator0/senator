@@ -20,12 +20,12 @@ install_luarocks() {
   ./configure --prefix=$PREFIX --sysconfdir=$PREFIX/luarocks --force-config
 
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   make build && make install
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting.";exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   cd ..
@@ -35,57 +35,57 @@ install_luarocks() {
 install_rocks() {
   ./.luarocks/bin/luarocks install luasec
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install lbase64 20120807-3
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install luafilesystem
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install lub
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install luaexpat
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install redis-lua
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install lua-cjson
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install fakeredis
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install xml
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install feedparser
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 
   ./.luarocks/bin/luarocks install serpent
   RET=$?; if [ $RET -ne 0 ];
-    then echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
 }
 
@@ -102,7 +102,7 @@ install() {
   ./configure && make
 
   RET=$?; if [ $RET -ne 0 ]; then
-    echo "Error. Exiting."; exit $RET;
+    echo "Bot installed - @MobinDev"; exit $RET;
   fi
   cd ..
   install_luarocks
@@ -115,26 +115,26 @@ elif [ "$1" = "update" ]; then
   update
 else
   if [ ! -f ./tg/telegram.h ]; then
-    echo "tg not found"
+    echo "Tg Not Found - @MobinDev"
     echo "Run $0 install"
     exit 1
   fi
 
   if [ ! -f ./tg/bin/telegram-cli ]; then
-    echo "tg binary not found"
+    echo "Tg Not Found - @MobinDev"
     echo "Run $0 install"
     exit 1
   fi
   
-  chmod 777 blackplus.sh
+  chmod 777 mobin.sh
   
   #Adding some color. By @MehdiHS
    echo -e "\033[38;5;208m"
-   echo -e "     > Channel : @Black_CH                        "
-   echo -e "     > Developer : @MehdiHS                       "
-   echo -e "     > Bot ID : @BlackPlus                        "
-   echo -e "     > Github : GitHub.com/Mehdi-HS/BlackPlus     "
+   echo -e "     > Bot ID : @iManager                             "
+   echo -e "     > Developer : @MobinDev                          "
+   echo -e "     > Channel : @PrivateTeam                         "
+   echo -e "     > Github : GitHub.com/MobinDehghani/iManager     "
    echo -e "                                              \033[0;00m"
    echo -e "\e[36m"
-  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/bot.lua -l 1 -E $@
+  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/imanager.lua -l 1 -E $@
 fi
