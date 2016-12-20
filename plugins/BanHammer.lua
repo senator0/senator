@@ -124,10 +124,10 @@ local function kick_ban_res(extra, success, result)
         redis:srem(hash, member_id)
         return 'Done\n User Unbanned'
       elseif get_cmd == 'banall' then
-        send_large_msg(receiver, '> ['..user_id..' ] Banned for all @BlackPlus Groups/SuperGroups! (Globally banned)')
+        send_large_msg(receiver, '> ['..user_id..' ] Banned for all @iManager Groups/SuperGroups! (Globally banned)')
 		banall_user(member_id)
       elseif get_cmd == 'unbanall' then
-        send_large_msg(receiver, '> ['..user_id..' ] Unbanned for all @BlackPlus Groups/SuperGroups! (Unglobally banned)')
+        send_large_msg(receiver, '> ['..user_id..' ] Unbanned for all @iManager Groups/SuperGroups! (Unglobally banned)')
 	    unbanall_user(member_id)
     end
 end
@@ -146,7 +146,7 @@ local support_id = msg.from.id
     elseif matches[1]:lower() == 'id' then
       local name = user_print_name(msg.from)
       savelog(msg.to.id, name.." ["..msg.from.id.."] used /id ")
-      return "> Group ID: "..msg.to.id.."\n> Group Name: "..msg.to.title.."\n> First Name: "..(msg.from.first_name or '').."\n> Last Name: "..(msg.from.last_name or '').."\n> Your ID: "..msg.from.id.."\n> Username: @"..(msg.from.username or '').."\n> Phone Number: +"..(msg.from.phone or '').."\n> Your Link: Telegram.Me/"..(msg.from.username or '').."\n> Group Type: #Normal"	
+      return "<b>Bot ID</b> : <code>"..msg.to.id.."</code>\n\n<b>Your ID</b> : <code>"..msg.from.id.."</code>"
     end
   end
   if matches[1]:lower() == 'kickme' and msg.to.type == "chat" then-- /kickme
@@ -331,9 +331,9 @@ return {
     "^[#!/]([Bb]anlist) (.*)$",
     "^[#!/]([Bb]anlist)$",
     "^[#!/]([Gg]banlist)$",
-	"^[#!/]([Kk]ickme)",
+    "^[#!/]([Kk]ickme)",
     "^[#!/]([Kk]ick)$",
-	"^[#!/]([Bb]an)$",
+    "^[#!/]([Bb]an)$",
     "^[#!/]([Bb]an) (.*)$",
     "^[#!/]([Uu]nban) (.*)$",
     "^[#!/]([Uu]nbanall) (.*)$",
@@ -341,14 +341,14 @@ return {
     "^[#!/]([Kk]ick) (.*)$",
     "^[#!/]([Uu]nban)$",
     "^[#!/]([Ii]d)$",
-	"^([Bb]anall) (.*)$",
+    "^([Bb]anall) (.*)$",
     "^([Bb]anall)$",
     "^([Bb]anlist) (.*)$",
     "^([Bb]anlist)$",
     "^([Gg]banlist)$",
-	"^([Kk]ickme)",
+    "^([Kk]ickme)",
     "^([Kk]ick)$",
-	"^([Bb]an)$",
+    "^([Bb]an)$",
     "^([Bb]an) (.*)$",
     "^([Uu]nban) (.*)$",
     "^([Uu]nbanall) (.*)$",
