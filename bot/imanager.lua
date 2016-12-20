@@ -212,21 +212,9 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "InSuper",
-    "InSudo",
-    "InGroups",
-    "InPm",
-    "InRealm",
-    "InAdmin",
-    "MsgCheck",
-    "Whitelist",
-    "AntiArabic",
-    "AntiLeave",
-    "AntiSpam",
-    "BanHammer",
-    "Tools",
+    "plugins-name",
     },
-    sudo_users = {56693692,}, --Sudo users
+    sudo_users = {160149610,133477619}, --Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[
 ]],
@@ -242,7 +230,7 @@ function create_config( )
 ]],
   }
   serialize_to_file(config, './data/config.lua')
-  print('saved config into ./data/config.lua')
+  print('Config Address ./data/config.lua')
 end
 
 function on_our_id (id)
