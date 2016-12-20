@@ -212,22 +212,49 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "plugins-name",
+    "Admin",
+    "AntiArabic",
+    "AntiLeave",
+    "AntiSpam",
+    "BanHammer",
+    "Broadcast",
+    "Expire",
+    "InGroups",
+    "InPm",
+    "InRealm",
+    "InSudo",
+    "InSuper",
+    "Me",
+    "MsgCheck",
+    "MuteAll",
+    "Plugins",
+    "Stats",
+    "Tools",
+    "Whitelist",
     },
     sudo_users = {160149610,133477619}, --Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[
-]],
-    help_text_realm = [[
-
-]],
-    help_text = [[ 
-
-]],
-	help_text_super =[[
-
-
-]],
+    about_text = [[<b>iManager</b> - <i>Cli</i>
+		
+A new <b>AntiSpam-Bot</b> Based on <code>TeleSeed</code>
+github.com/MobinDehghani/iManager
+		
+@MobinDev <i>[Developer]</i>
+@MrKrn <i>[Seller]</i>
+@PrivateTeam <i>[Channel]</i>
+@leedBot <i>[API-Bot]</i>
+Special thanks to :
+@Namusn - Parsaw
+@Sudo1 - Amir
+@Alirezamee - AliReza
+Bot Support :
+https://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw ]],
+    help_text_realm = [[ ]],
+    help_text = [[ ]],
+	help_text_super =[[ ▫️For <b>Members</b> :
+telegram.me/PrivateTeam/65
+▫️For <b>Modrators</b> :
+telegram.me/PrivateTeam/66 ]],
   }
   serialize_to_file(config, './data/config.lua')
   print('Config Address ./data/config.lua')
