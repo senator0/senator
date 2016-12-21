@@ -67,6 +67,7 @@ local exppm = '<i>Charge finish</i>\n'
 ..'<i>Charge For 1 Month :</i>\n'
 ..'/setexp_'..msg.to.id..'_30\n'
 ..'<b>_______________</b>\n'
+..'By @MobinDev'
 
 			local sends = send_msg(user, exppm, ok_cb, false)   
 			send_large_msg(get_receiver(msg), '⏰ کمتر از یکروز تا انقضای گروه باقی مانده است\n\n> برای تمدید تاریخ انقضای گروه میتوانید به گروه پشتیبانی روبات مراجعه نمایید و تقاضای تمدید دوباره نمایید\n\n👥 لینک گروه پشتیبانی :\nhttps://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw')
@@ -101,7 +102,7 @@ local exppm = '<i>Charge finish</i>\n'
 ..'<i>Unlimited Charge :</i>\n'
 ..'/setexp_'..msg.to.id..'_999\n'
 ..'<b>_______________</b>\n'
-..'لینک گروه پشتیبانی : \n https://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw'
+..'By @MobinDev'
 		local sends = send_msg(user, exppm, ok_cb, false)
 			send_large_msg(get_receiver(msg), '⏰ 1 روز تا انقضای گروه باقی مانده است\n\n> برای تمدید تاریخ انقضای گروه میتوانید به گروه پشتیبانی روبات مراجعه نمایید و تقاضای تمدید دوباره نمایید\n\n👥 لینک گروه پشتیبانی :\nhttps://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw')
 		redis:hset('expires1',msg.to.id,'1')
@@ -184,11 +185,11 @@ local exppm = '<code>Charge Request</code>\n'
 ..'<b>Group Link :</b> '..group_link..' \n'
 ..'<b>Info Time:</b> '..text4..'  \n'
 ..'<b>Info msg:</b>\n'..text3..'  \n'
-..'<b>----------------</b>\n'
+..'<b>_______________</b>\n'
 ..'<i>Charge For 1 Month :</i>\n'
 ..'/setexp_'..msg.to.id..'_30\n'
-..'----------------------------------\n'
-..'Send <b>Charge</b> For This Group!'
+..'<b>_______________</b>\n'
+..'By @MobinDev'
 			local sends = send_msg(user, exppm, ok_cb, false)
 		return "Your <b>Request</b> Was Sent!"
 end
