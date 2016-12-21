@@ -146,7 +146,7 @@ local support_id = msg.from.id
     elseif matches[1]:lower() == 'id' then
       local name = user_print_name(msg.from)
       savelog(msg.to.id, name.." ["..msg.from.id.."] used /id ")
-      return "<b>Bot ID</b> : <code>"..msg.to.id.."</code>\n\n<b>Your ID</b> : <code>"..msg.from.id.."</code>"
+      return "Group ID for <b>" ..string.gsub(msg.to.print_name, "_", " ").. "</b> :\n\n> -"..msg.to.id
     end
   end
   if matches[1]:lower() == 'kickme' and msg.to.type == "chat" then-- /kickme
