@@ -28,7 +28,7 @@ local function chat_stats(receiver, chat_id)
         return a.msgs > b.msgs
     end
   end)
-  local text = 'Users in This chat \n'
+  local text = 'Users in This chat :\n'
   for k,user in pairs(users_info) do
     text = text..user.name..' = '..user.msgs..'\n'
   end
@@ -60,7 +60,7 @@ local function chat_stats2(chat_id)
       end
     end)
 
-  local text = 'Users in This chat \n'
+  local text = 'Users in This chat :\n'
   for k,user in pairs(users_info) do
     text = text..user.name..' = '..user.msgs..'\n'
   end
@@ -151,3 +151,4 @@ return {
   run = run
 }
 end
+-- By @MobinDev
