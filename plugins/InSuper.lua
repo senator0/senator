@@ -1480,7 +1480,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return reply_msg(msg.id, "> SuperGroup ID: "..msg.to.id.."\n> SuperGroup Name: "..msg.to.title.."\n> First Name: "..(msg.from.first_name or '').."\n> Last Name: "..(msg.from.last_name or '').."\n> Your ID: "..msg.from.id.."\n> Username: @"..(msg.from.username or '').."\n> Phone Number: +"..(msg.from.phone or '404 Not Found!').."\n> Your Link: Telegram.Me/"..(msg.from.username or '').."\n> Group Type: #SuperGroup", ok_cb, false)		end
+				return reply_msg(msg.id, "<b>Group ID</b> : <code>"..msg.to.id.."</code>\n<b>Your ID</b> : <code>"..msg.from.id.."</code>\n<b>Your Name</b> : <code>" ..string.gsub(msg.from.print_name, "_", " ").. "</code>", ok_cb, false)		end
 		end
 
 		if matches[1] == 'kickme' then
@@ -1494,7 +1494,7 @@ local function run(msg, matches)
 			local function callback_link (extra , success, result)
 			local receiver = get_receiver(msg)
 				if success == 0 then
-					send_large_msg(receiver, '*Error \nReason: Not creator \n please use /setlink to set it')
+					send_large_msg(receiver, 'Error \nReason: Not creator \n please use /setlink to set it')
 					data[tostring(msg.to.id)]['settings']['set_link'] = nil
 					save_data(_config.moderation.data, data)
 				else
