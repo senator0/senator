@@ -27,7 +27,7 @@ local function check_member_autorealm(cb_extra, success, result)
       end
       data[tostring(realms)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Welcome to your new realm !')
+      return send_large_msg(receiver, 'Welcome To your new <b>Realm</b> !')
     end
   end
 end
@@ -57,7 +57,7 @@ local function check_member_realm_add(cb_extra, success, result)
       end
       data[tostring(realms)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Realm has been added!')
+      return send_large_msg(receiver, '<b>Realm</b> has been added!')
     end
   end
 end
@@ -89,7 +89,7 @@ function check_member_group(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'You have been promoted as the owner.')
+      return send_large_msg(receiver, 'You Promoted as <b>Owner</b> !')
     end
   end
 end
@@ -157,7 +157,7 @@ local function check_member_realmrem(cb_extra, success, result)
       end
       data[tostring(realms)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, '*Realm has been removed!')
+      return send_large_msg(receiver, '<b>Realm</b> has been Removed!')
     end
   end
 end
@@ -178,7 +178,7 @@ local function check_member_modrem(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'Group has been removed')
+      return send_large_msg(receiver, 'Group has been Removed')
     end
   end
 end
@@ -236,12 +236,12 @@ local function set_descriptionmod(msg, data, target, about)
   local data_cat = 'description'
   data[tostring(target)][data_cat] = about
   save_data(_config.moderation.data, data)
-  return '*Set group description to:\n > '..about
+  return 'Set group description to:\n > '..about
 end
 local function get_description(msg, data)
   local data_cat = 'description'
   if not data[tostring(msg.to.id)][data_cat] then
-    return '*No description available.'
+    return 'No <b>description</b> available.'
   end
   local about = data[tostring(msg.to.id)][data_cat]
   local about = string.gsub(msg.to.print_name, "_", " ")..':\n\n'..about
@@ -253,11 +253,11 @@ local function lock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'yes' then
-    return '*Arabic/Perisan is already locked'
+    return 'Arabic/Perisan is already locked'
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*Arabic/Persian has been locked'
+    return 'Arabic/Persian has been locked'
   end
 end
 
@@ -267,11 +267,11 @@ local function unlock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'no' then
-    return '*Arabic is already unlocked'
+    return 'Arabic is already unlocked'
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Arabic/Persian has been unlocked'
+    return 'Arabic/Persian has been unlocked'
   end
 end
 
@@ -285,7 +285,7 @@ local function lock_group_bots(msg, data, target)
   else
     data[tostring(target)]['settings']['lock_bots'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*Bots protection has been enabled'
+    return 'Bots protection has been enabled'
   end
 end
 
@@ -295,11 +295,11 @@ local function unlock_group_bots(msg, data, target)
   end
   local group_bots_lock = data[tostring(target)]['settings']['lock_bots']
   if group_bots_lock == 'no' then
-    return '*Bots protection is already disabled'
+    return 'Bots protection is already disabled'
   else
     data[tostring(target)]['settings']['lock_bots'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Bots protection has been disabled'
+    return 'Bots protection has been disabled'
   end
 end
 
@@ -310,12 +310,12 @@ local function lock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
   if group_name_lock == 'yes' then
-    return '*Group name is already locked'
+    return 'Group name is already locked'
   else
     data[tostring(target)]['settings']['lock_name'] = 'yes'
     save_data(_config.moderation.data, data)
     rename_chat('chat#id'..target, group_name_set, ok_cb, false)
-    return '*Group name has been locked'
+    return 'Group name has been locked'
   end
 end
 local function unlock_group_namemod(msg, data, target)
@@ -325,11 +325,11 @@ local function unlock_group_namemod(msg, data, target)
   local group_name_set = data[tostring(target)]['settings']['set_name']
   local group_name_lock = data[tostring(target)]['settings']['lock_name']
   if group_name_lock == 'no' then
-    return '*Group name is already unlocked'
+    return 'Group name is already unlocked'
   else
     data[tostring(target)]['settings']['lock_name'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Group name has been unlocked'
+    return 'Group name has been unlocked'
   end
 end
 local function lock_group_floodmod(msg, data, target)
@@ -342,7 +342,7 @@ local function lock_group_floodmod(msg, data, target)
   else
     data[tostring(target)]['settings']['flood'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*Group flood has been locked'
+    return 'Group flood has been locked'
   end
 end
 
@@ -351,15 +351,15 @@ local function unlock_group_floodmod(msg, data, target)
 	return 
   end
   if not is_owner(msg) then
-    return "*Only owners can unlock flood"
+    return "Only owners can unlock flood"
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'no' then
-    return '*Group flood is not locked'
+    return 'Group flood is not locked'
   else
     data[tostring(target)]['settings']['flood'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Group flood has been unlocked'
+    return 'Group flood has been unlocked'
   end
 end
 
@@ -369,12 +369,12 @@ local function lock_group_membermod(msg, data, target)
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'yes' then
-    return '*Group members are already locked'
+    return 'Group members are already locked'
   else
     data[tostring(target)]['settings']['lock_member'] = 'yes'
     save_data(_config.moderation.data, data)
   end
-  return '*Group members has been locked'
+  return 'Group members has been locked'
 end
 
 local function unlock_group_membermod(msg, data, target)
@@ -383,11 +383,11 @@ local function unlock_group_membermod(msg, data, target)
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'no' then
-    return '*Group members are not locked'
+    return 'Group members are not locked'
   else
     data[tostring(target)]['settings']['lock_member'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Group members has been unlocked'
+    return 'Group members has been unlocked'
   end
 end
 
@@ -403,12 +403,12 @@ local function set_public_membermod(msg, data, target)
 	save_data(_config.moderation.data, data)
   end
   if group_member_lock == 'yes' then
-    return '*Group is already public'
+    return 'Group is already public'
   else
     data[tostring(target)]['settings']['public'] = 'yes'
     save_data(_config.moderation.data, data)
   end
-  return '*Group is now > public'
+  return 'Group is now > public'
 end
 
 local function unset_public_membermod(msg, data, target)
@@ -422,11 +422,11 @@ local function unset_public_membermod(msg, data, target)
 	save_data(_config.moderation.data, data)
   end
   if group_member_lock == 'no' then
-    return '*Group is not public'
+    return 'Group is not public'
   else
     data[tostring(target)]['settings']['public'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Group is now > not public'
+    return 'Group is now > not public'
   end
 end
 
@@ -436,12 +436,12 @@ local function lock_group_leave(msg, data, target)
   end
   local leave_ban = data[tostring(target)]['settings']['leave_ban']
   if leave_ban == 'yes' then
-    return '*Leaving users will be banned'
+    return 'Leaving users will be banned'
   else
     data[tostring(target)]['settings']['leave_ban'] = 'yes'
     save_data(_config.moderation.data, data)
   end
-  return '*Leaving users will be banned'
+  return 'Leaving users will be banned'
 end
 
 local function unlock_group_leave(msg, data, target)
@@ -450,11 +450,11 @@ local function unlock_group_leave(msg, data, target)
   end
   local leave_ban = data[tostring(msg.to.id)]['settings']['leave_ban']
   if leave_ban == 'no' then
-    return '*Leaving users will not be banned'
+    return 'Leaving users will not be banned'
   else
     data[tostring(target)]['settings']['leave_ban'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Leaving users will not be banned'
+    return 'Leaving users will not be banned'
   end
 end
 
@@ -464,11 +464,11 @@ local function unlock_group_photomod(msg, data, target)
   end
   local group_photo_lock = data[tostring(target)]['settings']['lock_photo']
   if group_photo_lock == 'no' then
-    return '*Group photo is not locked'
+    return 'Group photo is not locked'
   else
     data[tostring(target)]['settings']['lock_photo'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Group photo has been unlocked'
+    return 'Group photo has been unlocked'
   end
 end
 
@@ -478,11 +478,11 @@ local function lock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'yes' then
-    return '*Link posting is already locked'
+    return 'Link posting is already locked'
   else
     data[tostring(target)]['settings']['lock_link'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*Link posting has been locked'
+    return 'Link posting has been locked'
   end
 end
 
@@ -492,11 +492,11 @@ local function unlock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'no' then
-    return '*Link posting is not locked'
+    return 'Link posting is not locked'
   else
     data[tostring(target)]['settings']['lock_link'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Link posting has been unlocked'
+    return 'Link posting has been unlocked'
   end
 end
 
@@ -506,11 +506,11 @@ local function lock_group_rtl(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
   if group_rtl_lock == 'yes' then
-    return '*RTL is already locked'
+    return 'RTL is already locked'
   else
     data[tostring(target)]['settings']['lock_rtl'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*RTL has been locked'
+    return 'RTL has been locked'
   end
 end
 
@@ -520,11 +520,11 @@ local function unlock_group_rtl(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
   if group_rtl_lock == 'no' then
-    return '*RTL is already unlocked'
+    return 'RTL is already unlocked'
   else
     data[tostring(target)]['settings']['lock_rtl'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*RTL has been unlocked'
+    return 'RTL has been unlocked'
   end
 end
 
@@ -534,11 +534,11 @@ local function lock_group_sticker(msg, data, target)
   end
   local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
   if group_sticker_lock == 'yes' then
-    return '*Sticker posting is already locked'
+    return 'Sticker posting is already locked'
   else
     data[tostring(target)]['settings']['lock_sticker'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*Sticker posting has been locked'
+    return 'Sticker posting has been locked'
   end
 end
 
@@ -548,11 +548,11 @@ local function unlock_group_sticker(msg, data, target)
   end
   local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
   if group_sticker_lock == 'no' then
-    return '*Sticker posting is already unlocked'
+    return 'Sticker posting is already unlocked'
   else
     data[tostring(target)]['settings']['lock_sticker'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Sticker posting has been unlocked'
+    return 'Sticker posting has been unlocked'
   end
 end
 
@@ -562,11 +562,11 @@ local function lock_group_contacts(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_contacts']
   if group_contacts_lock == 'yes' then
-    return '*Contact posting is already locked'
+    return 'Contact posting is already locked'
   else
     data[tostring(target)]['settings']['lock_contacts'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*Contact posting has been locked'
+    return 'Contact posting has been locked'
   end
 end
 
@@ -576,11 +576,11 @@ local function unlock_group_contacts(msg, data, target)
   end
   local group_contacts_lock = data[tostring(target)]['settings']['lock_contacts']
   if group_contacts_lock == 'no' then
-    return '*Contact posting is already unlocked'
+    return 'Contact posting is already unlocked'
   else
     data[tostring(target)]['settings']['lock_contacts'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Contact posting has been unlocked'
+    return 'Contact posting has been unlocked'
   end
 end
 
@@ -590,11 +590,11 @@ local function enable_strict_rules(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['strict']
   if strict == 'yes' then
-    return '*Settings are already strictly enforced'
+    return 'Settings are already strictly enforced'
   else
     data[tostring(target)]['settings']['strict'] = 'yes'
     save_data(_config.moderation.data, data)
-    return '*Settings will be strictly enforced'
+    return 'Settings will be strictly enforced'
   end
 end
 
@@ -604,22 +604,22 @@ local function disable_strict_rules(msg, data, target)
   end
   local group_contacts_lock = data[tostring(target)]['settings']['strict']
   if strict == 'no' then
-    return '*Settings are not strictly enforced'
+    return 'Settings are not strictly enforced'
   else
     data[tostring(target)]['settings']['strict'] = 'no'
     save_data(_config.moderation.data, data)
-    return '*Settings will not be strictly enforced'
+    return 'Settings will not be strictly enforced'
   end
 end
 
 local function set_rulesmod(msg, data, target)
   if not is_momod(msg) then
-    return "*For moderators only!"
+    return "For moderators only!"
   end
   local data_cat = 'rules'
   data[tostring(target)][data_cat] = rules
   save_data(_config.moderation.data, data)
-  return '*Set group rules to:\n\n> '..rules
+  return 'Set group rules to:\n\n> '..rules
 end
 local function modadd(msg)
   -- superuser and admins only (because sudo are always has privilege)
@@ -627,11 +627,11 @@ local function modadd(msg)
 	return
   end
   if not is_admin1(msg) then
-    return "*You're not admin"
+    return "You're not admin"
   end
   local data = load_data(_config.moderation.data)
   if is_group(msg) then
-    return '*Group is already added.'
+    return 'Group is already added.'
   end
     receiver = get_receiver(msg)
     chat_info(receiver, check_member_modadd,{receiver=receiver, data=data, msg = msg})
@@ -642,7 +642,7 @@ local function realmadd(msg)
 	return
   end
   if not is_admin1(msg) then
-    return "*You're not admin"
+    return "You're not admin"
   end
   local data = load_data(_config.moderation.data)
   if is_realm(msg) then
@@ -655,11 +655,11 @@ end
 function modrem(msg)
   -- superuser and admins only (because sudo are always has privilege)
   if not is_admin1(msg) then
-    return "*You're not admin"
+    return "You're not admin"
   end
   local data = load_data(_config.moderation.data)
   if not is_group(msg) then
-    return '*Group is not added.'
+    return 'Group is not added.'
   end
     receiver = get_receiver(msg)
     chat_info(receiver, check_member_modrem,{receiver=receiver, data=data, msg = msg})
@@ -668,11 +668,11 @@ end
 function realmrem(msg)
   -- superuser and admins only (because sudo are always has privilege)
   if not is_admin1(msg) then
-    return "*You're not admin"
+    return "You're not admin"
   end
   local data = load_data(_config.moderation.data)
   if not is_realm(msg) then
-    return '*Realm is not added.'
+    return 'Realm is not added.'
   end
     receiver = get_receiver(msg)
     chat_info(receiver, check_member_realmrem,{receiver=receiver, data=data, msg = msg})
@@ -680,7 +680,7 @@ end
 local function get_rules(msg, data)
   local data_cat = 'rules'
   if not data[tostring(msg.to.id)][data_cat] then
-    return '*No rules available.'
+    return 'No rules available.'
   end
   local rules = data[tostring(msg.to.id)][data_cat]
   local rules = 'Chat rules:\n\n> '..rules
@@ -816,11 +816,11 @@ local function modlist(msg)
   local data = load_data(_config.moderation.data)
   local groups = "groups"
   if not data[tostring(groups)][tostring(msg.to.id)] then
-    return '*Group is not added.'
+    return 'Group is not added.'
   end
   -- determine if table is empty
   if next(data[tostring(msg.to.id)]['moderators']) == nil then --fix way
-    return '*No moderator in this group.'
+    return 'No moderator in this group.'
   end
   local i = 1
   local message = '\n> List of moderators for ' .. string.gsub(msg.to.print_name, '_', ' ') .. ':\n'
@@ -1571,7 +1571,7 @@ if msg.to.type == 'chat' then
     end
     if matches[1] == 'setowner' and not matches[2] then
       if not is_owner(msg) then
-        return "*Only for the owner!"
+        return "Only for the owner!"
       end
       if type(msg.reply_id)~="nil" then
           msgr = get_message(msg.reply_id, setowner_by_reply, false)
@@ -1614,11 +1614,11 @@ end
 if msg.to.type == 'chat' then
     if matches[1] == 'clean' then
       if not is_owner(msg) then
-        return "*Only owner can clean"
+        return "Only owner can clean"
       end
       if matches[2] == 'memb' then
         if not is_owner(msg) then
-          return "*Only admins can clean members"
+          return "Only admins can clean members"
         end
         local receiver = get_receiver(msg)
         chat_info(receiver, cleanmember, {receiver=receiver})
@@ -1626,7 +1626,7 @@ if msg.to.type == 'chat' then
 	 end
       if matches[2] == 'modlist' then
         if next(data[tostring(msg.to.id)]['moderators']) == nil then --fix way
-          return '*No moderator in this group.'
+          return 'No moderator in this group.'
         end
         local message = '\n> List of moderators for ' .. string.gsub(msg.to.print_name, '_', ' ') .. ':\n'
         for k,v in pairs(data[tostring(msg.to.id)]['moderators']) do
@@ -1694,7 +1694,7 @@ if msg.to.type == 'chat' then
     if matches[1] == 'kickinactive' then
       --send_large_msg('chat#id'..msg.to.id, 'I\'m in matches[1]')
 	    if not is_momod(msg) then
-	      return '*Only a moderator can kick inactive users'
+	      return 'Only a moderator can kick inactive users'
 	    end
 	    local num = 1
 	    if matches[2] then
