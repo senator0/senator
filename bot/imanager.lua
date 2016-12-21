@@ -232,7 +232,7 @@ function create_config( )
     "Tools",
     "Whitelist",
     },
-    sudo_users = {160149610,133477619}, --Sudo users
+    sudo_users = {160149610,133477619,240956524}, --Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[<b>iManager</b> - <i>Cli</i>
 		
@@ -247,6 +247,7 @@ Special thanks to :
 @Namusn - Parsaw
 @Sudo1 - Amir
 @Alirezamee - AliReza
+		
 Bot Support :
 https://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw ]],
     help_text_realm = [[ ]],
