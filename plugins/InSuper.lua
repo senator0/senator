@@ -19,7 +19,7 @@ local function check_member_super(cb_extra, success, result)
           set_name = string.gsub(msg.to.title, '_', ' '),
 		  lock_arabic = 'no',
 		  lock_link = "no",
-          flood = 'yes',
+                  flood = 'yes',
 		  lock_spam = 'yes',
 		  lock_sticker = 'no',
 		  member = 'no',
@@ -2373,7 +2373,7 @@ return {
 	"^[#!/]([Bb]ots)$",
 	"^[#!/]([Ww]ho)$",
 	"^[#!/]([Kk]icked)$",
-    "^[#!/]([Kk]ick) (.*)",
+        "^[#!/]([Kk]ick) (.*)",
 	"^[#!/]([Kk]ick)",
 	"^[#!/]([Uu]pchat)$",
 	"^[#!/]([Ii][Dd])$",
@@ -2425,7 +2425,7 @@ return {
 	"^([Bb]ots)$",
 	"^([Ww]ho)$",
 	"^([Kk]icked)$",
-    "^([Kk]ick) (.*)",
+        "^([Kk]ick) (.*)",
 	"^([Kk]ick)",
 	"^([Uu]pchat)$",
 	"^([Ii][Dd])$",
@@ -2467,7 +2467,7 @@ return {
 	"^([Hh]elp)$",
 	"^([Mm]uteslist)$",
 	"^([Mm]utelist)$",
-    "([Hh][Tt][Tt][Pp][Ss]://[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/[Jj][Oo][Ii][Nn][Cc][Hh][Aa][Tt]/%S+)",
+        "([Hh][Tt][Tt][Pp][Ss]://[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/[Jj][Oo][Ii][Nn][Cc][Hh][Aa][Tt]/%S+)",
 	"msg.to.peer_id",
 	"%[(document)%]",
 	"%[(photo)%]",
@@ -2480,3 +2480,4 @@ return {
   pre_process = pre_process
 }
 
+-- By @MobinDev
