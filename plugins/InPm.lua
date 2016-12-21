@@ -36,7 +36,7 @@ local function chat_list(msg)
     if not data[tostring(groups)] then
         return 'No groups at the moment'
     end
-    local message = 'List of Groups:\n*Use #join (ID) to join*\n\n'
+    local message = 'list of Groups:\nUse #join (ID) to join\n\n'
     for k,v in pairsByKeys(data[tostring(groups)]) do
 		local group_id = v
 		if data[tostring(group_id)] then
@@ -209,7 +209,7 @@ if to == 'user' or service or is_admin1(msg) and to == "chat" or to == "channel"
 
 	if matches[1] == 'help' and msg.to.type == 'user' or matches[1] == 'pmhelp' and is_admin1(msg) and msg.to.type ~= 'user' then
       	savelog(msg.to.id, name_log.." ["..msg.from.id.."] used pm help")
-		text = "Welcome to BlackPlus!\n\n>To get a new BlackPlus group, Use /support command to get a support Link! Or Contact a Support Team With @BlackSupport_Bot\n\nFor more information, check out our channel:\n[@Black_CH] \n\nUse #superhelp command to show bot commands!!\n\n#Thanks_for_using @BIackPlus!"
+		text = "Welcome to <b>iManager</b> !\n\nTo get a list of iManager groups use /chats or /chatlist for a document list of chats.\n\nTo get a new iManager group\n\n\nOur <b>Support</b> :\nhttps://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw"
      	return text
     end
 
