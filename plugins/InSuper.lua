@@ -544,11 +544,11 @@ local function lock_group_sticker(msg, data, target)
   end
   local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
   if group_sticker_lock == 'yes' then
-    return reply_msg(msg.id,"> #Sticker posting is #already locked", ok_cb, false)
+    return '<b>Sticker Status is Already</b> : <code>lock</code>'
   else
     data[tostring(target)]['settings']['lock_sticker'] = 'yes'
     save_data(_config.moderation.data, data)
-    return reply_msg(msg.id,"> #Sticker posting has been #locked", ok_cb, false)
+    return '<b>Sticker Status Switched to</b> : <code>lock</code>\n<b>Changed by : </b>@'..(msg.from.username or msg.from.first_name)
   end
 end
 
@@ -558,11 +558,11 @@ local function unlock_group_sticker(msg, data, target)
   end
   local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
   if group_sticker_lock == 'no' then
-    return reply_msg(msg.id,"> #Sticker posting is #already unlocked", ok_cb, false)
+    return '<b>Sticker Status is Already</b> : <code>unlock</code>'
   else
     data[tostring(target)]['settings']['lock_sticker'] = 'no'
     save_data(_config.moderation.data, data)
-    return reply_msg(msg.id,"> #Sticker posting has been #unlocked", ok_cb, false)
+    return '<b>Sticker Status Switched to</b> : <code>unlock</code>\n<b>Changed by : </b>@'..(msg.from.username or msg.from.first_name)
   end
 end
 
@@ -572,11 +572,11 @@ local function lock_group_contacts(msg, data, target)
   end
   local group_contacts_lock = data[tostring(target)]['settings']['lock_contacts']
   if group_contacts_lock == 'yes' then
-    return reply_msg(msg.id,"> #Contact posting is #already locked", ok_cb, false)
+    return '<b>Contact Status is Already</b> : <code>lock</code>'
   else
     data[tostring(target)]['settings']['lock_contacts'] = 'yes'
     save_data(_config.moderation.data, data)
-    return reply_msg(msg.id,"> #Contact posting has been #locked", ok_cb, false)
+    return '<b>Contacts Status Switched to</b> : <code>lock</code>\n<b>Changed by : </b>@'..(msg.from.username or msg.from.first_name)
   end
 end
 
@@ -586,11 +586,11 @@ local function unlock_group_contacts(msg, data, target)
   end
   local group_contacts_lock = data[tostring(target)]['settings']['lock_contacts']
   if group_contacts_lock == 'no' then
-    return reply_msg(msg.id,"> #Contact posting is #already unlocked", ok_cb, false)
+    return '<b>Contact Status is Already</b> : <code>unlock</code>'
   else
     data[tostring(target)]['settings']['lock_contacts'] = 'no'
     save_data(_config.moderation.data, data)
-    return reply_msg(msg.id,"> #Contact posting has been #unlocked", ok_cb, false)
+    return '<b>Contacts Status Switched to</b> : <code>unlock</code>\n<b>Changed by : </b>@'..(msg.from.username or msg.from.first_name)
   end
 end
 
@@ -600,11 +600,11 @@ local function enable_strict_rules(msg, data, target)
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
   if group_strict_lock == 'yes' then
-    return reply_msg(msg.id,"> #Settings are #already strictly enforced", ok_cb, false)
+    return '<b>Strictly Status is Already</b> : <code>enforced</code>'
   else
     data[tostring(target)]['settings']['strict'] = 'yes'
     save_data(_config.moderation.data, data)
-    return reply_msg(msg.id,"> #Settings will be #strictly_enforced", ok_cb, false)
+    return '<b>Strict Status Switched to</b> : <code>enforced</code>\n<b>Changed by : </b>@'..(msg.from.username or msg.from.first_name)
   end
 end
 
@@ -614,11 +614,11 @@ local function disable_strict_rules(msg, data, target)
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
   if group_strict_lock == 'no' then
-    return reply_msg(msg.id,"> #Settings are #not strictly enforced", ok_cb, false)
+    return '<b>Strictly Status is Already</b> : <code>unforced</code>'
   else
     data[tostring(target)]['settings']['strict'] = 'no'
     save_data(_config.moderation.data, data)
-    return reply_msg(msg.id,"> #Settings will #not be strictly enforced", ok_cb, false)
+    return '<b>Strict Status Switched to</b> : <code>unforced</code>\n<b>Changed by : </b>@'..(msg.from.username or msg.from.first_name)
   end
 end
 --End supergroup locks
@@ -631,7 +631,7 @@ local function set_rulesmod(msg, data, target)
   local data_cat = 'rules'
   data[tostring(target)][data_cat] = rules
   save_data(_config.moderation.data, data)
-  return reply_msg(msg.id,"*SuperGroup rules set", ok_cb, false)
+  return reply_msg(msg.id,"SuperGroup <b>Rules</b> was Set !", ok_cb, false)
 end
 
 --'Get supergroup rules' function
@@ -649,7 +649,7 @@ end
 --Set supergroup to public or not public function
 local function set_public_membermod(msg, data, target)
   if not is_momod(msg) then
-    return reply_msg(msg.id,"*For moderators only!", ok_cb, false)
+    return reply_msg(msg.id,"For Moderators only!", ok_cb, false)
   end
   local group_public_lock = data[tostring(target)]['settings']['public']
   local long_id = data[tostring(target)]['long_id']
