@@ -109,10 +109,10 @@ local function pre_process(msg)
 	  if msg.to.type == 'chat' or msg.to.type == 'channel' then
 		if username then
 			savelog(msg.to.id, name_log.." @"..username.." ["..msg.from.id.."] kicked for #spam")
-			send_large_msg(receiver , "Spamming is not allowed here\n@"..username.."["..msg.from.id.."]\nKicking Spammer!")
+			send_large_msg(receiver , "<b>Flooding</b> is not allowed here\n@"..username.." <code>["..msg.from.id.."]</code>\nStatus: User kicked :D")
 		else
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] kicked for #spam")
-			send_large_msg(receiver , "Spamming is not allowed here\nName:"..name_log.."["..msg.from.id.."]\nKicking Spammer!")
+			send_large_msg(receiver , "<b>Flooding</b> is not allowed here\nName: "..name_log.." <code>["..msg.from.id.."]</code>\nStatus: User kicked :D")
 		end
 	  end
       -- incr it on redis
@@ -136,13 +136,13 @@ local function pre_process(msg)
           local print_name = user_print_name(msg.from):gsub("‮", "")
 		  local name = print_name:gsub("_", "")
           --Send this to that chat
-          send_large_msg("chat#id"..msg.to.id, "> User [ "..name.." ]"..msg.from.id.." Banned for all @BlackPlus Groups/SuperGroups!(spamming)")
-		  send_large_msg("channel#id"..msg.to.id, "> User [ "..name.." ]"..msg.from.id.." Banned for all @BlackPlus Groups/SuperGroups!(#Spamming)")
+          send_large_msg("chat#id"..msg.to.id, "User [ "..name.." ] <code>"..msg.from.id.."</code> Globally banned (Spamming)")
+		  send_large_msg("channel#id"..msg.to.id, "User [ "..name.." ] <code>"..msg.from.id.."</code> Globally banned (Spamming)")
           local GBan_log = 'GBan_log'
 		  local GBan_log =  data[tostring(GBan_log)]
 		  for k,v in pairs(GBan_log) do
 			log_SuperGroup = v
-			gban_text = "> User [ "..name.." ] ( @"..username.." )"..msg.from.id.." Banned for all @BlackPlus Groups/SuperGroups! ( "..msg.to.print_name.." ) [ "..msg.to.id.." ] (#Spamming)"
+			gban_text = "User [ "..name.." ] ( @"..username.." ) "..msg.from.id.." Globally banned from ( "..msg.to.print_name.." ) [ "..msg.to.id.." ] (Spaming)"
 			--send it to log group/channel
 			send_large_msg(log_SuperGroup, gban_text)
 		  end
