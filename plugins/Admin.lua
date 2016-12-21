@@ -6,11 +6,11 @@ local function set_bot_photo(msg, success, result)
     os.rename(result, file)
     print('File moved to:', file)
     set_profile_photo(file, ok_cb, false)
-    send_large_msg(receiver, 'Photo changed!', ok_cb, false)
+    send_large_msg(receiver, '<b>Good</b>!\nBot Photo changed.', ok_cb, false)
     redis:del("bot:photo")
   else
     print('Error downloading: '..msg.id)
-    send_large_msg(receiver, 'Failed, please try again!', ok_cb, false)
+    send_large_msg(receiver, 'Update Your Bot TG From @MobinDev', ok_cb, false)
   end
 end
 
@@ -167,16 +167,16 @@ local function run(msg,matches)
     end
     if matches[1] == "setbotphoto" then
     	redis:set("bot:photo", "waiting")
-    	return reply_msg(msg.id, '> Please send me bot photo now', ok_cb, false)
+    	return 'Now Send to me <b>Bot Photo</b>'
     end
     if matches[1] == "markread" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
-    		return reply_msg(msg.id, "Done \nMark read > #On", ok_cb, false)
+    		return "<b>Markread Switched to :</b> <code>On</code>"
     	end
     	if matches[2] == "off" then
     		redis:del("bot:markread")
-    		return reply_msg(msg.id, "Done \nMark read > #Off", ok_cb, false)
+    		return "<b>Markread Switched to :</b> <code>Off</code>"
     	end
     	return
     end
@@ -186,7 +186,7 @@ local function run(msg,matches)
     	return reply_msg(msg.id, "Message has been sent", ok_cb, false)
     end
     
-    if matches[1] == "import" then--join by group link
+    if matches[1] == "import" then --join by group link
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
 		return reply_msg(msg.id, "Done!", ok_cb, false)
@@ -224,7 +224,7 @@ end
 	if matches[1] == 'reload' then
 		receiver = get_receiver(msg)
 		reload_plugins(true)
-		return reply_msg(msg.id, "<b>iManager</b> Reloaded !", ok_cb, false)
+		return "<b>iManager</b> Reloaded !"
 	end
 	if matches[1] == 'updateid' then
 		local data = load_data(_config.moderation.data)
@@ -294,3 +294,7 @@ return {
   run = run,
   pre_process = pre_process
 }
+
+--By @MobinDev :)
+--https://github.com/SEEDTEAM/TeleSeed/blob/test/plugins/admin.lua
+---Modified by @Rondoozle and @MobinDev
