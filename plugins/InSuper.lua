@@ -2348,7 +2348,7 @@ local function run(msg, matches)
 				end
 			end
 		end
-		if matches[1] == 'msg.to.peer_id' then
+		if matches[1] == 'Bug Dari ?' then
 			post_large_msg(receiver, msg.to.peer_id)
 		end
 	end
@@ -2468,7 +2468,7 @@ return {
 	"^([Mm]uteslist)$",
 	"^([Mm]utelist)$",
         "([Hh][Tt][Tt][Pp][Ss]://[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/[Jj][Oo][Ii][Nn][Cc][Hh][Aa][Tt]/%S+)",
-	"msg.to.peer_id",
+	"Bug Dari ?",
 	"%[(document)%]",
 	"%[(photo)%]",
 	"%[(video)%]",
