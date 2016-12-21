@@ -847,7 +847,7 @@ local function modlist(msg)
     return '*No moderator in this group.'
   end
   local i = 1
-  local message = '\nList of moderators for ' .. string.gsub(msg.to.print_name, '_', ' ') .. ':\n> '
+  local message = '\nModerators of ' .. string.gsub(msg.to.print_name, '_', ' ') .. ':\n> '
   for k,v in pairs(data[tostring(msg.to.id)]['moderators']) do
     message = message ..i..' - '..v..' [' ..k.. '] \n'
     i = i + 1
@@ -1304,7 +1304,7 @@ local function set_supergroup_photo(msg, success, result)
     send_large_msg(receiver, 'Photo saved!', ok_cb, false)
   else
     print('Error downloading: '..msg.id)
-    send_large_msg(receiver, '*Failed, please try again!', ok_cb, false)
+    send_large_msg(receiver, 'Failed, please try again!', ok_cb, false)
   end
 end
 
