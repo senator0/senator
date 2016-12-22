@@ -1493,11 +1493,11 @@ local function run(msg, matches)
 			local function callback_link (extra , success, result)
 			local receiver = get_receiver(msg)
 				if success == 0 then
-					send_large_msg(receiver, 'Error \nReason: Not creator \n please use /setlink to set it')
+					send_large_msg(receiver, 'i can not <b>Create</b> link !\nYou can Change link By /setlink')
 					data[tostring(msg.to.id)]['settings']['set_link'] = nil
 					save_data(_config.moderation.data, data)
 				else
-					send_large_msg(receiver, "Created a new link")
+					send_large_msg(receiver, "New link has been <b>Created</b> !")
 					data[tostring(msg.to.id)]['settings']['set_link'] = result
 					save_data(_config.moderation.data, data)
 				end
@@ -1509,14 +1509,14 @@ local function run(msg, matches)
 		if matches[1] == 'setlink' and is_owner(msg) then
 			data[tostring(msg.to.id)]['settings']['set_link'] = 'waiting'
 			save_data(_config.moderation.data, data)
-			return 'Please send the new group link now!'
+			return '<b>Good</b> !\nNow Send Group link ...'
 		end
 
 		if msg.text then
 			if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and data[tostring(msg.to.id)]['settings']['set_link'] == 'waiting' and is_owner(msg) then
 				data[tostring(msg.to.id)]['settings']['set_link'] = msg.text
 				save_data(_config.moderation.data, data)
-				return "New link set !"
+				return "New <b>link</b> was Set !"
 			end
 		end
 
@@ -1526,10 +1526,10 @@ local function run(msg, matches)
 			end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-				return "> Create a link using /newlink first!\n\nOr if I am not creator use /setlink to set your link"
+				return "not Have <b>link</b>\nFirst Change link by /setlink !"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
-			return "SuperGroup link:\n> "..group_link
+			return "Your Group <b>link</b> :\n> "..group_link
 		end
 
 		if matches[1] == "invite" and is_sudo(msg) then
@@ -1643,7 +1643,7 @@ local function run(msg, matches)
 					data[tostring(msg.to.id)]['set_owner'] = tostring(matches[2])
 					save_data(_config.moderation.data, data)
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set ["..matches[2].."] as owner")
-					local text = "[ "..matches[2].." ] added as owner"
+					local text = "["..matches[2].."] added as <b>Owner</b> !"
 					return text
 				end
 				local	get_cmd = 'setowner'
@@ -1664,7 +1664,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return reply_msg(msg.id,"*Error \nOnly owner/admin can promote",ok_cb,false)
+				return reply_msg(msg.id,"Error \nOnly Owner|Admins can Promote",ok_cb,false)
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1694,13 +1694,13 @@ local function run(msg, matches)
 			channel = get_receiver(msg)
 			user_id = 'user#id'..matches[2]
 			channel_set_mod(channel, user_id, ok_cb, false)
-			return "Done"
+			return "Was <b>Done</b>"
 		end
 		if matches[1] == 'md' and is_sudo(msg) then
 			channel = get_receiver(msg)
 			user_id = 'user#id'..matches[2]
 			channel_demote(channel, user_id, ok_cb, false)
-			return "Done"
+			return "Was <b>Done</b>"
 		end
 
 		if matches[1] == 'demote' then
@@ -1708,7 +1708,7 @@ local function run(msg, matches)
 				return
 			end
 			if not is_owner(msg) then
-				return reply_msg(msg.id,"*Error \nOnly owner/support/admin can promote",ok_cb,false)
+				return reply_msg(msg.id,"Only Owner|Support|Admins can Promote",ok_cb,false)
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
@@ -1790,7 +1790,7 @@ local function run(msg, matches)
 			data[tostring(msg.to.id)]['settings']['set_photo'] = 'waiting'
 			save_data(_config.moderation.data, data)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] started setting new SuperGroup photo")
-			return '> Please send the new group photo now!'
+			return 'Please Send the new <b>Group Photo</b> now!'
 		end
 
 		if matches[1] == 'clean' then
@@ -1818,7 +1818,7 @@ local function run(msg, matches)
             data[tostring(msg.to.id)][data_cat] = nil
             save_data(_config.moderation.data, data)
             redis:del(hash)
-			return reply_msg(msg.id,"Banlist have been Cleaned.",ok_cb, false)
+			return reply_msg(msg.id,"<b>Banlist</b> have been Cleaned!",ok_cb, false)
 			end
 			if matches[2] == 'rules' then
 				local data_cat = 'rules'
@@ -1872,7 +1872,7 @@ local function run(msg, matches)
                 data[tostring(msg.to.id)][data_cat] = nil
                 save_data(_config.moderation.data, data)
                 redis:del(hash)
-			return reply_msg(msg.id,"GbanList Have Been Cleaned!", ok_cb,false)
+			return reply_msg(msg.id,"<b>GbanList</b> Have Been Cleaned!", ok_cb,false)
 		end
 	end
 		if matches[1] == 'lock' and is_momod(msg) then
@@ -2064,13 +2064,13 @@ local function run(msg, matches)
 				return
 			end
 			if tonumber(matches[2]) < 2 or tonumber(matches[2]) > 50 then
-				return "Wrong number,range is [5-20]"
+				return "Wrong number,range is <code>[5-20]</code>"
 			end
 			local flood_max = matches[2]
 			data[tostring(msg.to.id)]['settings']['flood_msg_max'] = flood_max
 			save_data(_config.moderation.data, data)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] set flood to ["..matches[2].."]")
-			return 'Flood has been set to: '..matches[2]
+			return '<b>Flood</b> has been set To : <code>'..matches[2]..'</code>'
 		end
 		if matches[1] == 'public' and is_momod(msg) then
 			local target = msg.to.id
@@ -2091,7 +2091,7 @@ local function run(msg, matches)
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." has been Muted"
 				else
 					return "SuperGroup mute "..msg_type.." is already on"
 				end
