@@ -250,12 +250,9 @@ Special thanks to :
 		
 Bot Support :
 https://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw ]],
-    help_text_realm = [[ ]],
-    help_text = [[ ]],
-	help_text_super =[[ ▫️For <b>Members</b> :
-telegram.me/PrivateTeam/65
-▫️For <b>Modrators</b> :
-telegram.me/PrivateTeam/66 ]],
+    help_text_realm = [[ ]], -- Help Realm-Gp
+    help_text = [[ ]], --Help Normal-Gp
+	help_text_super =[[ ]], -- Help Super-Gp
   }
   serialize_to_file(config, './data/config.lua')
   print('Config Address ./data/config.lua')
