@@ -1121,9 +1121,9 @@ local function callbackres(extra, success, result)
 			save_data(_config.moderation.data, data)
 			savelog(channel, name_log.." ["..from_id.."] set ["..result.peer_id.."] as owner by username")
 		if result.username then
-			text = member_username.."> [ "..result.peer_id.." ] added as owner"
+			text = member_username.."<code>["..result.peer_id.."]</code> added as <b>Owner</b>"
 		else
-			text = "> [ "..result.peer_id.." ] added as owner"
+			text = "<code>["..result.peer_id.."]</code> added as <b>Owner</b>"
 		end
 		send_large_msg(receiver, text)
   end
@@ -1225,7 +1225,7 @@ elseif get_cmd == "setadmin" then
         text = "@"..v.username.." ["..v.peer_id.."] has been set as an admin"
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] set admin @"..v.username.." ["..v.peer_id.."]")
       else
-        text = "> ["..v.peer_id.."] has been set as an admin"
+        text = "> <code>["..v.peer_id.."]</code> has been set as an Admin"
         savelog(msg.to.id, name_log.." ["..msg.from.id.."] set admin "..v.peer_id)
       end
 	  if v.username then
@@ -1262,7 +1262,7 @@ elseif get_cmd == "setadmin" then
 				if result.username then
 					text = member_username.." ["..v.peer_id.."] added as owner"
 				else
-					text = "> ["..v.peer_id.."] added as owner"
+					text = "<code>["..v.peer_id.."]</code> added as <b>Owner</b>"
 				end
 			end
 		elseif memberid and vusername ~= member and vpeer_id ~= memberid then
@@ -1277,7 +1277,7 @@ elseif get_cmd == "setadmin" then
 				data[tostring(channel)]['set_owner'] = tostring(memberid)
 				save_data(_config.moderation.data, data)
 				savelog(channel, name_log.."["..from_id.."] set ["..memberid.."] as owner by username")
-				text = "> ["..memberid.."] added as owner"
+				text = "<code>["..memberid.."]</code> added as <b>Owner</b>"
 			end
 		end
 	end
@@ -1323,7 +1323,7 @@ local function run(msg, matches)
 			if not is_admin1(msg) then
 				return
 			end
-			return "Already a SuperGroup"
+			return "<b>Already is</b> : <code>SuperGroup</code>"
 		end
 	end
 	if msg.to.type == 'channel' then
@@ -1381,7 +1381,7 @@ local function run(msg, matches)
 				return "*no owner,ask admins in support groups to set owner for your SuperGroup"
 			end
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] used /owner")
-			return "SuperGroup owner is > ["..group_owner..']'
+			return "SuperGroup <b>Owner</b> is > <code>["..group_owner..']</code>'
 		end
 
 		if matches[1] == "modlist" then
