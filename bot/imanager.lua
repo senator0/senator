@@ -243,9 +243,8 @@ A new <b>AntiSpam-Bot</b> Based on <code>BlackPlus</code>
 github.com/MobinDehghani/iManager
 		
 @MobinDev <i>[Developer]</i>
-@MrKrn <i>[Seller]</i>
 @PrivateTeam <i>[Channel]</i>
-@leedBot <i>[API-Bot]</i>
+		
 Special thanks to :
 @Namusn - Parsaw
 @Sudo1 - Amir
