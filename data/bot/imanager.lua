@@ -195,7 +195,7 @@ function load_config( )
   local f = io.open('./data/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
-    print ("launched By @MobinDev")
+    print ("config.lua By @MobinDev")
     create_config()
   else
     f:close()
@@ -220,7 +220,6 @@ function create_config( )
     "CleanDeleted",
     "Expire",
     "Filter",
-    "InRealm",
     "InSuper",
     "Me",
     "MsgCheck",
@@ -231,7 +230,7 @@ function create_config( )
     "Stats",
     "Whitelist",
     },
-    sudo_users = {160149610,133477619,240956524}, --Sudo users
+    sudo_users = {160149610,0000000}, --Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[<b>iManager</b> - <i>Cli</i>
 		
