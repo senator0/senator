@@ -20,3 +20,4 @@ cd $HOME && cd iManager && chmod 777 mobin.sh && screen ./mobin.sh
 sudo service redis-server start && redis-cli
 `````
 
+Kharid Noskhe Kamel az [Sazande Source](https://t.me/mobindev)
