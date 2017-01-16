@@ -69,6 +69,8 @@ end
     patterns = {
       "^[#!/](me)$",
       "^(me)$",
+      "^[#!/](info)$",
+      "^(info)$",
     },
     run = run
   }
