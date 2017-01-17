@@ -2480,4 +2480,4 @@ return {
 }
 
 -- By @MobinDev
--- Thanks to @MehdiHS
+-- Fuck to @MehdiHS
