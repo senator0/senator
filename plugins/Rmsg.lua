@@ -9,7 +9,7 @@ local function history(extra, suc, result)
   end
 end
 local function run(msg, matches)
-  if matches[1] == 'clean' and is_owner(msg) or matches[1] =='حذف' and is_owner(msg) or matches[1] == 'rm' and is_owner(msg) then
+  if matches[1] == 'del' and is_owner(msg) or matches[1] =='حذف' and is_owner(msg) or matches[1] == 'rm' and is_owner(msg) then
     if msg.to.type == 'channel' then
       if tonumber(matches[2]) > 200 or tonumber(matches[2]) < 1 then
         return "Error of Delete <b>Massage</b>\nSelect <code>1-200</code> <b>Massages</b> Number for Delete!"
@@ -25,7 +25,8 @@ end
 
 return {
     patterns = {
-        '^[!/#](clean) msg (%d*)$',
+        '^[!/#](del) (%d*)$',
+        '^(del) (%d*)$',
         '^[!/#](rm)sg (%d*)$',
         '^(rm)sg (%d*)$',
         '^(حذف) (%d*)$'
