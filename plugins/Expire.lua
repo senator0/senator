@@ -54,19 +54,19 @@ group_owner = "--"
 end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-group_link = "Unset"
+group_link = "<code>Unset</code>"
 end
-local exppm = '<i>Charge finish</i>\n'
-..'<b>_______________</b>\n'
+local exppm = '<b>Charge Finished</b>\n'
+..'<b>-----------------------------------------------</b>\n'
 ..'<b>Group Name :</b> <code> '..msg.to.title..' </code>\n'
 ..'<b>Group ID :</b> <code> '..msg.to.id..'  </code>\n'
 ..'<b>Group Owner :</b>  <code> '..group_owner..'  </code> \n'
 ..'<b>Group Link :</b> '..group_link..'\n'
 ..'<b>Info Time:</b>\n'..text12..'\n'
-..'<b>_______________</b>\n'
+..'<b>-----------------------------------------------</b>\n'
 ..'<i>Charge For 1 Month :</i>\n'
 ..'/setexp_'..msg.to.id..'_30\n'
-..'<b>_______________</b>\n'
+..'<b>-----------------------------------------------</b>\n'
 ..'Our Channel : @PrivateTeam'
 
 			local sends = send_msg(user, exppm, ok_cb, false)   
@@ -85,23 +85,23 @@ group_owner = "--"
 end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-group_link = "Unset"
+group_link = "<code>Unset</code>"
 end
-local exppm = '<i>Charge finish</i>\n'
-..'<b>_______________</b>\n'
+local exppm = '<b>Charge Finished</b>\n'
+..'<b>-----------------------------------------------</b>\n'
 ..'<b>Group Name :</b> <code> '..msg.to.title..' </code>\n'
 ..'<b>Group ID :</b> <code> '..msg.to.id..'  </code>\n'
 ..'<b>Group Owner :</b>  <code> '..group_owner..'  </code> \n'
 ..'<b>Group Link :</b> '..group_link..'\n'
 ..'<b>Info Time:</b>\n'..text13..'\n'
-..'<b>_______________</b>\n'
+..'<b>-----------------------------------------------</b>\n'
 ..'<i>Charge For 1 Month :</i>\n'
 ..'/setexp_'..msg.to.id..'_30\n'
 ..'<i>Charge For 3 Month :</i>\n'
 ..'/setexp_'..msg.to.id..'_90\n'
 ..'<i>Unlimited Charge :</i>\n'
 ..'/setexp_'..msg.to.id..'_999\n'
-..'<b>_______________</b>\n'
+..'<b>-----------------------------------------------</b>\n'
 ..'Our Channel : @PrivateTeam'
 		local sends = send_msg(user, exppm, ok_cb, false)
 			send_large_msg(get_receiver(msg), '⏰ 1 روز تا انقضای گروه باقی مانده است\n\n> برای تمدید تاریخ انقضای گروه میتوانید به گروه پشتیبانی روبات مراجعه نمایید و تقاضای تمدید دوباره نمایید\n\n👥 لینک گروه پشتیبانی :\nhttps://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw')
@@ -166,7 +166,7 @@ function run(msg, matches)
 			if not expiretime then 
 				expiretime = "-"
 				end
-local text3 = "We Need Charge :D"
+local text3 = "<code>Group Need to Charge :(</code>"
 local user = "user#id"..160149610 -- Your ID
 local data = load_data(_config.moderation.data)
 local group_owner = data[tostring(msg.to.id)]['set_owner']
@@ -175,7 +175,7 @@ group_owner = "--"
 end
 local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 if not group_link then
-group_link = "Unset"
+group_link = "<code>Not Seted !</code>"
 end
 local exppm = 'Charge <b>Request</b> !\n'
 ..'<b>-----------------------------------------------</b>\n'
@@ -186,7 +186,9 @@ local exppm = 'Charge <b>Request</b> !\n'
 ..'<b>Info Time :</b> '..text4..'\n'
 ..'<b>Info Msg :</b> '..text3..'\n'
 ..'<b>-----------------------------------------------</b>\n'
-..'Charge For 1 Month :\n'
+..'Charge For 1 <b>Week</b> :\n'
+..'/setexp_'..msg.to.id..'_7\n'
+..'Charge For 1 <b>Month</b> :\n'
 ..'/setexp_'..msg.to.id..'_30\n'
 ..'<b>-----------------------------------------------</b>\n'
 ..'Our Channel : @PrivateTeam'
@@ -196,14 +198,14 @@ end
 end
 return {
   patterns = {
-    "^(setexpire) (.*)$",
+                "^(setexpire) (.*)$",
 		"^(setexp)_(.*)_(.*)$",
-	  "^(expire)$",
+	        "^(expire)$",
 		"^(charge)$",
 		"^[!#/](charge)$",
 		"^[!#/](setexpire) (.*)$",
 		"^[!#/](setexp)_(.*)_(.*)$",
-	"^[!#/](expire)$",
+	        "^[!#/](expire)$",
   },
   run = run,
   pre_process = pre_process
