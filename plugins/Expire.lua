@@ -54,7 +54,7 @@ group_owner = "--"
 end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-group_link = "<code>Unset</code>"
+group_link = "<code>Not Seted !</code>"
 end
 local exppm = '<b>Charge Finished</b>\n'
 ..'<b>-----------------------------------------------</b>\n'
@@ -87,7 +87,7 @@ group_owner = "--"
 end
 			local group_link = data[tostring(msg.to.id)]['settings']['set_link']
 			if not group_link then
-group_link = "<code>Unset</code>"
+group_link = "<code>Not Seted !</code>"
 end
 local exppm = '<b>Charge Finished</b>\n'
 ..'<b>-----------------------------------------------</b>\n'
@@ -183,7 +183,7 @@ local exppm = 'Charge <b>Request</b> !\n'
 ..'<b>Group ID :</b> <code>'..msg.to.id..' </code>\n'
 ..'<b>Group Owner :</b> <code>'..group_owner..'</code>\n'
 ..'<b>Group Link :</b> '..group_link..'\n'
-..'<b>Info Time :</b> '..text4..'\n'
+..'<b>Info Time :</b> <code>'..text4..'</code>\n'
 ..'<b>Info Msg :</b> '..text3..'\n'
 ..'<b>-----------------------------------------------</b>\n'
 ..'Charge For 1 <b>Week</b> :\n'
