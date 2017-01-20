@@ -5,19 +5,27 @@ sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgr
 `````
 * **Install Bot**
 `````sh
-cd $HOME && git clone https://github.com/senator0/senatur && cd senatur && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+cd $HOME && git clone https://github.com/senator0/senator && cd senatuo && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 `````
 * **launch Bot**
 `````sh
-cd $HOME && cd senatur && ./launch.sh
+cd $HOME && cd senator && ./launch.sh
 `````
 * **Start Auto-launch**
 `````sh
-cd $HOME && cd senatur && chmod 777 senator.sh && screen ./senator.sh
+cd $HOME && cd senator && chmod 777 senator.sh && screen ./senator.sh
 `````
 * **install Redis [Free Servers]**
 `````sh
 sudo service redis-server start && redis-cli
+`````
+* **setid sudo**
+`````sh
+cd $HOME && cd senator && cd data && nano config.lua
+`````
+* **اگر در ترمینال بعد این که لانچ کردین زیر هر پی ام که میاد پیام old msg اومد دستور زیر را در ترمینال اجرا کنید و پایین لاین 60هس 5لاین کدو پاک کنید یعنی تا ned**
+`````sh
+cd $HOME && cd data && cd bot && nano senator.lua
 `````
 #
 * **sazande  [Sazande Source](https://t.me/Lv_t_m)**
