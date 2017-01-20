@@ -195,7 +195,7 @@ function load_config( )
   local f = io.open('./data/config.lua', "r")
   -- If config.lua doesn't exist
   if not f then
-    print ("config.lua By @MobinDev")
+    print ("config.lua By @Lv_t_m")
     create_config()
   else
     f:close()
@@ -230,23 +230,21 @@ function create_config( )
     "Stats",
     "Whitelist",
     },
-    sudo_users = {160149610,0000000}, --Sudo users
+    sudo_users = {170146015,204507468,196568905}, --Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[<b>iManager</b> - <i>Cli</i>
+    about_text = [[<b>Senator_tea</b> - <i>Cli</i>
 		
-A new <b>AntiSpam-Bot</b> Based on <code>BlackPlus</code>
-github.com/MobinDehghani/iManager
-		
-@MobinDev <i>[Developer]</i>
+A new <b>AntiSpam-Bot</b> Based on <code>senator</code>
+github.com/senator0/senator		
+@Lv_t_m <i>[Developer]</i>
 @PrivateTeam <i>[Channel]</i>
 		
 Special thanks to :
-@Namusn - Parsaw
-@Sudo1 - Amir
-@Alirezamee - AliReza
-		
+@Lv_t_m - tohid
+@@sudo_Dr_slow - Ali
+@@MAHDI_m_s - Mahdi		
 Bot Support :
-https://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw ]],
+https://telegram.me/joinchat/CiQ430ApYbU4pHCdc65gKg ]],
     help_text_realm = [[ ]], -- Help Realm-Gp
     help_text = [[ ]], --Help Normal-Gp
 	help_text_super =[[ ]], -- Help Super-Gp
