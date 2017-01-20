@@ -2287,19 +2287,19 @@ local function run(msg, matches)
 		end
 
 		if matches[1] == 'help' and not is_momod(msg) then
-                         text = " ▫️For <b>Members</b> :\ntelegram.me/PrivateTeam/65\n▫️For <b>Modrators</b> :\ntelegram.me/PrivateTeam/66 "
+                         text = " ▫️For <b>Members</b> :\ntelegram.me/Senator_tea/84\n▫️For <b>Modrators</b> :\ntelegram.me/Senator_tea/85 "
 			reply_msg(msg.id, text, ok_cb, false)
 		elseif matches[1] == 'help' and is_momod(msg) then
-                         text = " ▫️For <b>Members</b> :\ntelegram.me/PrivateTeam/65\n▫️For <b>Modrators</b> :\ntelegram.me/PrivateTeam/66 "
+                         text = " ▫️For <b>Members</b> :\ntelegram.me/Senator_tea/84\n▫️For <b>Modrators</b> :\ntelegram.me/Senator_tea/85 "
 			reply_msg(msg.id, text, ok_cb, false)
 		end
 		
 	if matches[1] == 'superhelp' and is_momod(msg) then
-                         text = " ▫️For <b>Members</b> :\ntelegram.me/PrivateTeam/65\n▫️For <b>Modrators</b> :\ntelegram.me/PrivateTeam/66 "
+                         text = " ▫️For <b>Members</b> :\ntelegram.me/Senator_tea/84\n▫️For <b>Modrators</b> :\ntelegram.me/Senator_tea/85 "
 			reply_msg(msg.id, text, ok_cb, false)
 	end
 	if matches[1] == 'superhelp' and msg.to.type == "user" then
-                         text = " ▫️For <b>Members</b> :\ntelegram.me/PrivateTeam/65\n▫️For <b>Modrators</b> :\ntelegram.me/PrivateTeam/66 "
+                         text = " ▫️For <b>Members</b> :\ntelegram.me/Senator_tea/84\n▫️For <b>Modrators</b> :\ntelegram.me/Senator_tea/85 "
 			reply_msg(msg.id, text, ok_cb, false)
 	end
 
