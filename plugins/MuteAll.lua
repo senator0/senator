@@ -44,5 +44,4 @@ run = run,
 }
 end
 
--- By @MobinDev
--- Thanks to @BlackWolf_Admin
+-- By @Lv_t_m
