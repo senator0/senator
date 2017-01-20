@@ -23,9 +23,9 @@ sudo service redis-server start && redis-cli
 `````sh
 cd $HOME && cd senator && cd data && nano config.lua
 `````
-* **اگر در ترمینال بعد این که لانچ کردین زیر هر پی ام که میاد پیام old msg اومد دستور زیر را در ترمینال اجرا کنید و پایین لاین 60هس 5لاین کدو پاک کنید یعنی تا ned**
+* **Problem old msg:دستورات زیرو ارسال کنید و از لاین 60تا 65پاک کنید**
 `````sh
-cd $HOME && cd data && cd bot && nano senator.lua
+cd $HOME && cd data && cd bot && nano senator.lua && ctrl+x y intr &&سپس اگه از سرور پولی استفاده میکنید از اتو لانچ  کنید اگه نه لانچ ساده بزنید اگر از سرور رایگانه استفاده میکنید باید دستور زیر را در یک ترمینال بزنید بعد لانچ کنید ربات را
 `````
 #
 * **sazande  [Sazande Source](https://t.me/Lv_t_m)**
