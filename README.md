@@ -5,7 +5,7 @@ sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgr
 `````
 * **Install Bot**
 `````sh
-cd $HOME && git clone https://github.com/tohid224455/senator && cd senator && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+cd $HOME && git clone https://github.com/senator0/senator && cd senator && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 `````
 * **launch Bot**
 `````sh
