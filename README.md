@@ -13,7 +13,7 @@ cd $HOME && cd senatur && ./launch.sh
 `````
 * **Start Auto-launch**
 `````sh
-cd $HOME && cd senatur && chmod 777 mobin.sh && screen ./mobin.sh
+cd $HOME && cd senatur && chmod 777 senator.sh && screen ./senator.sh
 `````
 * **install Redis [Free Servers]**
 `````sh
