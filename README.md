@@ -5,15 +5,15 @@ sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgr
 `````
 * **Install Bot**
 `````sh
-cd $HOME && git clone https://github.com/senator0/senator && cd senator && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+cd $HOME && git clone https://github.com/senator0/senatur && cd senatur && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 `````
 * **launch Bot**
 `````sh
-cd $HOME && cd senator && ./launch.sh
+cd $HOME && cd senatur && ./launch.sh
 `````
 * **Start Auto-launch**
 `````sh
-cd $HOME && cd senator && chmod 777 mobin.sh && screen ./mobin.sh
+cd $HOME && cd senatur && chmod 777 mobin.sh && screen ./mobin.sh
 `````
 * **install Redis [Free Servers]**
 `````sh
