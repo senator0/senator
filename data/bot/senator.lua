@@ -237,7 +237,7 @@ function create_config( )
 A new <b>AntiSpam-Bot</b> Based on <code>senator</code>
 github.com/senator0/senatur		
 @Lv_t_m <i>[Developer]</i>
-@PrivateTeam <i>[Channel]</i>
+@Senator_tea <i>[Channel]</i>
 		
 Special thanks to :
 @Lv_t_m - tohid
