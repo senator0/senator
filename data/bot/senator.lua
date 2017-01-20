@@ -235,7 +235,7 @@ function create_config( )
     about_text = [[<b>Senator_tea</b> - <i>Cli</i>
 		
 A new <b>AntiSpam-Bot</b> Based on <code>senator</code>
-github.com/senator0/senatur		
+github.com/senator0/senator		
 @Lv_t_m <i>[Developer]</i>
 @Senator_tea <i>[Channel]</i>
 		
