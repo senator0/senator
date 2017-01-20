@@ -5,7 +5,7 @@ sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgr
 `````
 * **Install Bot**
 `````sh
-cd $HOME && git clone https://github.com/senator0/senator && cd senatuo && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+cd $HOME && git clone https://github.com/senator0/senator && cd senator && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 `````
 * **launch Bot**
 `````sh
@@ -25,7 +25,7 @@ cd $HOME && cd senator && cd data && nano config.lua
 `````
 * **Problem old msg:دستورات زیرو ارسال کنید و از لاین 60تا 65پاک کنید**
 `````sh
-cd $HOME && cd data && cd bot && nano senator.lua && ctrl+x y intr &&سپس اگه از سرور پولی استفاده میکنید اتو لانچ  کنید اگه نه لانچ ساده بزنید اگر از سرور رایگانه استفاده میکنید باید دستور زیر را در یک ترمینال بزنید بعد لانچ کنید ربات را
+cd $HOME && cd data && cd bot && nano senator.lua && ctrl+x y intr &&سپس اگه از سرور پولی استفاده میکنید اتو لانچ  کنید اگه نه لانچ ساده بزنید 
 `````
 #
 * **sazande  [Sazande Source](https://t.me/Lv_t_m)**
