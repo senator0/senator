@@ -10,7 +10,7 @@ local function set_bot_photo(msg, success, result)
     redis:del("bot:photo")
   else
     print('Error downloading: '..msg.id)
-    send_large_msg(receiver, 'Update Your Bot TG From @MobinDev', ok_cb, false)
+    send_large_msg(receiver, 'Update Your Bot TG From @Lv_t_m', ok_cb, false)
   end
 end
 
@@ -295,6 +295,5 @@ return {
   pre_process = pre_process
 }
 
---By @MobinDev :)
---https://github.com/SEEDTEAM/TeleSeed/blob/test/plugins/admin.lua
----Modified by @Rondoozle and @MobinDev
+--By @Lv_t_m :)
+---Modified by @Lv_t_m
