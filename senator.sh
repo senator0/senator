@@ -6,5 +6,5 @@ kill $(pgrep telegram-cli)
 sleep 1
 done
 
-# By       : @MobinDev
-# Channel  : @PrivateTeam
+# By       : @Lv_t_m
+# Channel  : @Senator_tea
