@@ -25,7 +25,7 @@ cd $HOME && cd senator && cd data && nano config.lua
 `````
 * **Problem old msg:دستورات زیرو ارسال کنید و از لاین 60تا 65پاک کنید**
 `````sh
-cd $HOME && cd data && cd bot && nano senator.lua && ctrl+x y intr &&سپس اگه از سرور پولی استفاده میکنید اتو لانچ  کنید اگه نه لانچ ساده بزنید 
+cd $HOME && cd data && cd bot && nano senator.lua &بعد پاک کردن لاین های مورد نظر این دستوراتو برا ثبت تغییرات  بزنید& ctrl+x y intr &&سپس اگه از سرور پولی استفاده میکنید اتو لانچ  کنید اگه نه لانچ ساده بزنید 
 `````
 #
 * **sazande  [Sazande Source](https://t.me/Lv_t_m)**
