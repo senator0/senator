@@ -244,6 +244,7 @@ Special thanks to :
 @@sudo_Dr_slow - Ali
 @@MAHDI_m_s - Mahdi		
 Bot Support :
+https://telegram.me/Lv_t_m
 https://telegram.me/joinchat/CiQ430ApYbU4pHCdc65gKg ]],
     help_text_realm = [[ ]], -- Help Realm-Gp
     help_text = [[ ]], --Help Normal-Gp
