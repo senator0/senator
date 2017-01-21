@@ -25,5 +25,7 @@ cd $HOME && cd senator && cd data && nano config.lua
 `````
 * **سپس اگه از سرور پولی استفاده میکنید اتو لانچ  کنید اگه نه لانچ ساده بزنید**
 `````sh
+Start Auto-launch && launch Bot
+`````
 #
 * **sazande  [Sazande Source](https://t.me/Lv_t_m)**
