@@ -235,11 +235,11 @@ github.com/senator0/senator
 		
 Special thanks to :
 @Lv_t_m - tohid
-@@sudo_Dr_slow - Ali
-@@MAHDI_m_s - Mahdi		
+@sudo_Dr_slow - Ali
+@MAHDI_m_s - Mahdi		
 Bot Support :
 https://telegram.me/Lv_t_m
-https://telegram.me/joinchat/CiQ430ApYbU4pHCdc65gKg ]],
+https://telegram.me/joinchat/AAAAAEApYbVX4kzYqYKMjQ ]],
     help_text_realm = [[ ]], -- Help Realm-Gp
     help_text = [[ ]], --Help Normal-Gp
 	help_text_super =[[ ]], -- Help Super-Gp
